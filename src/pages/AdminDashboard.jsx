@@ -6,6 +6,7 @@ import AdminProblemModal from '../components/AdminProblemModal';
 import StatusBadge from '../components/StatusBadge';
 import { api } from '../services/api';
 import { InstagramIcon, LinkedinIcon, GlobeIcon } from '../components/SocialIcons';
+import { SOCIAL_LINKS } from '../config/social';
 import {
   Users,
   CheckCircle2,
@@ -343,7 +344,7 @@ export default function AdminDashboard({ admin, onLogout }) {
 
                 <div className="space-y-3 text-xs font-semibold">
                   <a
-                    href="https://instagram.com/ieeesmckare"
+                    href={SOCIAL_LINKS.instagram}
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-pink-50 text-slate-700 hover:text-pink-700 border border-slate-200/80 transition-all group"
@@ -353,13 +354,13 @@ export default function AdminDashboard({ admin, onLogout }) {
                       <span>Instagram</span>
                     </div>
                     <span className="text-slate-400 group-hover:text-pink-600 flex items-center gap-1 font-bold text-[11px]">
-                      @ieeesmckare
+                      {SOCIAL_LINKS.instagramHandle}
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </span>
                   </a>
 
                   <a
-                    href="https://linkedin.com/company/ieee-smc-kare"
+                    href={SOCIAL_LINKS.linkedin}
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-blue-50 text-slate-700 hover:text-blue-700 border border-slate-200/80 transition-all group"
@@ -369,13 +370,13 @@ export default function AdminDashboard({ admin, onLogout }) {
                       <span>LinkedIn</span>
                     </div>
                     <span className="text-slate-400 group-hover:text-blue-600 flex items-center gap-1 font-bold text-[11px]">
-                      IEEE SMC KARE
+                      {SOCIAL_LINKS.linkedinHandle}
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </span>
                   </a>
 
                   <a
-                    href="https://ieeesmckare.in"
+                    href={SOCIAL_LINKS.website}
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-orange-700 border border-slate-200/80 transition-all group"
@@ -385,7 +386,7 @@ export default function AdminDashboard({ admin, onLogout }) {
                       <span>Website</span>
                     </div>
                     <span className="text-slate-400 group-hover:text-orange-600 flex items-center gap-1 font-bold text-[11px]">
-                      ieeesmckare.in
+                      {SOCIAL_LINKS.websiteHandle}
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </span>
                   </a>

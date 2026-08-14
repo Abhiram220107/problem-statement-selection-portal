@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from './Logo';
 import { InstagramIcon, LinkedinIcon, GlobeIcon } from './SocialIcons';
+import { SOCIAL_LINKS } from '../config/social';
 import {
   LayoutDashboard,
   Users,
@@ -84,7 +85,7 @@ export default function Sidebar({ activeTab, setActiveTab, user, isAdmin = false
 
           <div className="flex items-center justify-center gap-2 mb-3">
             <a
-              href="https://instagram.com/ieeesmckare"
+              href={SOCIAL_LINKS.instagram}
               target="_blank"
               rel="noreferrer"
               className="w-7 h-7 rounded-lg bg-white/5 hover:bg-pink-600/30 text-pink-400 flex items-center justify-center transition-all border border-white/10"
@@ -93,7 +94,7 @@ export default function Sidebar({ activeTab, setActiveTab, user, isAdmin = false
               <InstagramIcon className="w-3.5 h-3.5" />
             </a>
             <a
-              href="https://linkedin.com/company/ieee-smc-kare"
+              href={SOCIAL_LINKS.linkedin}
               target="_blank"
               rel="noreferrer"
               className="w-7 h-7 rounded-lg bg-white/5 hover:bg-blue-600/30 text-blue-400 flex items-center justify-center transition-all border border-white/10"
@@ -102,7 +103,7 @@ export default function Sidebar({ activeTab, setActiveTab, user, isAdmin = false
               <LinkedinIcon className="w-3.5 h-3.5" />
             </a>
             <a
-              href="https://ieeesmckare.in"
+              href={SOCIAL_LINKS.website}
               target="_blank"
               rel="noreferrer"
               className="w-7 h-7 rounded-lg bg-white/5 hover:bg-orange-600/30 text-orange-400 flex items-center justify-center transition-all border border-white/10"

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Menu } from 'lucide-react';
 import { InstagramIcon, LinkedinIcon } from './SocialIcons';
+import { SOCIAL_LINKS } from '../config/social';
 
 export default function Header({ user, isAdmin, onToggleSidebar }) {
   const name = user?.name || user?.username || 'User';
@@ -33,23 +34,23 @@ export default function Header({ user, isAdmin, onToggleSidebar }) {
         {/* Social Badges */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="https://instagram.com/ieeesmckare"
+            href={SOCIAL_LINKS.instagram}
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-pink-50 hover:bg-pink-100 text-pink-700 text-xs font-semibold border border-pink-200 transition-all"
           >
             <InstagramIcon className="w-3.5 h-3.5" />
-            <span>@ieeesmckare</span>
+            <span>{SOCIAL_LINKS.instagramHandle}</span>
           </a>
 
           <a
-            href="https://linkedin.com/company/ieee-smc-kare"
+            href={SOCIAL_LINKS.linkedin}
             target="_blank"
             rel="noreferrer"
             className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-700 text-xs font-semibold border border-blue-200 transition-all"
           >
             <LinkedinIcon className="w-3.5 h-3.5" />
-            <span>IEEE SMC KARE</span>
+            <span>{SOCIAL_LINKS.linkedinHandle}</span>
           </a>
         </div>
 

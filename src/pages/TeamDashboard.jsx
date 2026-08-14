@@ -7,6 +7,7 @@ import Loading from '../components/Loading';
 import StatusBadge from '../components/StatusBadge';
 import { api } from '../services/api';
 import { InstagramIcon, LinkedinIcon, GlobeIcon } from '../components/SocialIcons';
+import { SOCIAL_LINKS } from '../config/social';
 import {
   Lock,
   CheckCircle2,
@@ -92,7 +93,7 @@ export default function TeamDashboard({ team, onLogout }) {
 
   return (
     <div className="min-h-screen bg-slate-50 flex">
-      {/* Dark Sidebar */}
+      {/* Sidebar */}
       <Sidebar
         activeTab={activeTab}
         setActiveTab={setActiveTab}
@@ -120,7 +121,7 @@ export default function TeamDashboard({ team, onLogout }) {
                 <h2 className="text-2xl font-black text-slate-900 tracking-tight">
                   Welcome, {teamState.name || `Team ${teamState.id}`}
                 </h2>
-                <span className="px-2.5 py-0.5 rounded-full text-xs font-extrabold bg-indigo-100 text-indigo-800 border border-indigo-200">
+                <span className="px-2.5 py-0.5 rounded-full text-xs font-extrabold bg-orange-100 text-orange-800 border border-orange-200">
                   {teamState.id}
                 </span>
               </div>
@@ -136,7 +137,7 @@ export default function TeamDashboard({ team, onLogout }) {
               disabled={isRefreshing}
               className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs font-semibold text-slate-700 hover:bg-slate-50 shadow-xs transition-all cursor-pointer"
             >
-              <RefreshCw className={`w-3.5 h-3.5 text-purple-600 ${isRefreshing ? 'animate-spin' : ''}`} />
+              <RefreshCw className={`w-3.5 h-3.5 text-orange-600 ${isRefreshing ? 'animate-spin' : ''}`} />
               <span>{isRefreshing ? 'Syncing...' : 'Sync Live Status'}</span>
             </button>
           </div>
@@ -163,7 +164,7 @@ export default function TeamDashboard({ team, onLogout }) {
 
           {/* RULE 4 PERSISTENT CONFIRMED SELECTION BANNER */}
           {hasSelectedProblem && selectedProblemDetails && (
-            <div className="mb-8 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-indigo-900 via-indigo-950 to-slate-900 text-white shadow-2xl relative overflow-hidden border border-indigo-800">
+            <div className="mb-8 p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-slate-900 via-orange-950 to-slate-900 text-white shadow-2xl relative overflow-hidden border border-orange-800">
               <div className="relative z-10">
                 <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
                   <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-extrabold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
@@ -176,7 +177,7 @@ export default function TeamDashboard({ team, onLogout }) {
                   </span>
                 </div>
 
-                <div className="text-xs font-extrabold tracking-widest text-indigo-300 uppercase mb-1">
+                <div className="text-xs font-extrabold tracking-widest text-orange-300 uppercase mb-1">
                   Selected Challenge ID: {selectedProblemDetails.id}
                 </div>
 
@@ -184,11 +185,11 @@ export default function TeamDashboard({ team, onLogout }) {
                   {selectedProblemDetails.title}
                 </h3>
 
-                <p className="text-xs text-indigo-200/90 leading-relaxed max-w-3xl mb-6">
+                <p className="text-xs text-orange-100/90 leading-relaxed max-w-3xl mb-6">
                   {selectedProblemDetails.description}
                 </p>
 
-                <div className="pt-4 border-t border-indigo-800/80 flex flex-wrap items-center justify-between gap-4 text-xs font-medium text-indigo-300">
+                <div className="pt-4 border-t border-orange-800/80 flex flex-wrap items-center justify-between gap-4 text-xs font-medium text-orange-200">
                   <div>
                     Confirmed At: <span className="font-bold text-white">{selectedProblemDetails.selectedAt || teamState.selectedAt || 'Recorded'}</span>
                   </div>
@@ -231,11 +232,11 @@ export default function TeamDashboard({ team, onLogout }) {
             <div className="space-y-6">
               <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs">
                 <div className="flex items-center gap-2 mb-4">
-                  <Megaphone className="w-5 h-5 text-purple-600" />
+                  <Megaphone className="w-5 h-5 text-orange-600" />
                   <h4 className="text-sm font-extrabold text-slate-900">Event Announcements</h4>
                 </div>
 
-                <div className="p-4 rounded-xl bg-purple-50/80 border border-purple-100 text-purple-900 text-xs leading-relaxed mb-4">
+                <div className="p-4 rounded-xl bg-orange-50/80 border border-orange-100 text-orange-950 text-xs leading-relaxed mb-4">
                   <div className="font-bold mb-1">Attention Teams!</div>
                   Select your problem statement carefully. Once selected, your choice is final and locked.
                 </div>
@@ -247,13 +248,13 @@ export default function TeamDashboard({ team, onLogout }) {
 
               <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs">
                 <h4 className="text-sm font-extrabold text-slate-900 mb-4 flex items-center gap-2">
-                  <GlobeIcon className="w-4 h-4 text-purple-600" />
+                  <GlobeIcon className="w-4 h-4 text-orange-600" />
                   <span>IEEE SMC KARE Links</span>
                 </h4>
 
                 <div className="space-y-3 text-xs font-semibold">
                   <a
-                    href="https://instagram.com/ieeesmckare"
+                    href={SOCIAL_LINKS.instagram}
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-pink-50 text-slate-700 hover:text-pink-700 border border-slate-200/80 transition-all group"
@@ -263,13 +264,13 @@ export default function TeamDashboard({ team, onLogout }) {
                       <span>Instagram</span>
                     </div>
                     <span className="text-slate-400 group-hover:text-pink-600 flex items-center gap-1 font-bold text-[11px]">
-                      @ieeesmckare
+                      {SOCIAL_LINKS.instagramHandle}
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </span>
                   </a>
 
                   <a
-                    href="https://linkedin.com/company/ieee-smc-kare"
+                    href={SOCIAL_LINKS.linkedin}
                     target="_blank"
                     rel="noreferrer"
                     className="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-blue-50 text-slate-700 hover:text-blue-700 border border-slate-200/80 transition-all group"
@@ -279,23 +280,23 @@ export default function TeamDashboard({ team, onLogout }) {
                       <span>LinkedIn</span>
                     </div>
                     <span className="text-slate-400 group-hover:text-blue-600 flex items-center gap-1 font-bold text-[11px]">
-                      IEEE SMC KARE
+                      {SOCIAL_LINKS.linkedinHandle}
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </span>
                   </a>
 
                   <a
-                    href="https://ieeesmckare.in"
+                    href={SOCIAL_LINKS.website}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-purple-50 text-slate-700 hover:text-purple-700 border border-slate-200/80 transition-all group"
+                    className="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-orange-700 border border-slate-200/80 transition-all group"
                   >
                     <div className="flex items-center gap-2.5">
-                      <GlobeIcon className="w-4 h-4 text-purple-600" />
+                      <GlobeIcon className="w-4 h-4 text-orange-600" />
                       <span>Website</span>
                     </div>
-                    <span className="text-slate-400 group-hover:text-purple-600 flex items-center gap-1 font-bold text-[11px]">
-                      ieeesmckare.in
+                    <span className="text-slate-400 group-hover:text-orange-600 flex items-center gap-1 font-bold text-[11px]">
+                      {SOCIAL_LINKS.websiteHandle}
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </span>
                   </a>
