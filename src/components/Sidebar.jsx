@@ -5,9 +5,6 @@ import {
   LayoutDashboard,
   Users,
   FileText,
-  CheckSquare,
-  BarChart3,
-  Settings,
   LogOut
 } from 'lucide-react';
 
@@ -16,9 +13,6 @@ export default function Sidebar({ activeTab, setActiveTab, user, onLogout, isOpe
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { id: 'teams', label: 'Teams', icon: Users },
     { id: 'problems', label: 'Problems', icon: FileText },
-    { id: 'selections', label: 'Selections', icon: CheckSquare },
-    { id: 'analytics', label: 'Analytics', icon: BarChart3 },
-    { id: 'settings', label: 'Settings', icon: Settings },
   ];
 
   return (
@@ -33,17 +27,17 @@ export default function Sidebar({ activeTab, setActiveTab, user, onLogout, isOpe
 
       {/* Sidebar Container */}
       <aside
-        className={`fixed top-0 left-0 bottom-0 z-50 w-64 bg-[#0f0d23] text-slate-200 flex flex-col justify-between transition-transform duration-300 ease-in-out border-r border-indigo-950/50 shadow-2xl ${
+        className={`fixed top-0 left-0 bottom-0 z-50 w-60 bg-[#0f0d23] text-slate-200 flex flex-col justify-between transition-transform duration-300 ease-in-out border-r border-indigo-950/50 shadow-2xl ${
           isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}
       >
         {/* Top Logo Section */}
         <div>
-          <div className="p-6 border-b border-indigo-950/60 flex items-center justify-between">
-            <Logo className="h-12" />
+          <div className="p-5 border-b border-indigo-950/60 flex items-center justify-between">
+            <Logo className="h-10" />
           </div>
 
-          {/* Nav Items */}
+          {/* Clean Functional Nav Items */}
           <nav className="p-4 space-y-1.5">
             {navItems.map((item) => {
               const Icon = item.icon;
@@ -57,7 +51,7 @@ export default function Sidebar({ activeTab, setActiveTab, user, onLogout, isOpe
                   }}
                   className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-semibold text-xs transition-all cursor-pointer ${
                     isActive
-                      ? 'bg-purple-700/80 text-white shadow-lg shadow-purple-900/40 border border-purple-500/30'
+                      ? 'bg-purple-600 text-white shadow-md shadow-purple-900/40 border border-purple-400/30'
                       : 'text-slate-400 hover:text-white hover:bg-white/5'
                   }`}
                 >
@@ -78,49 +72,44 @@ export default function Sidebar({ activeTab, setActiveTab, user, onLogout, isOpe
           </nav>
         </div>
 
-        {/* Bottom Quote & Footer Box */}
-        <div className="p-5 m-4 rounded-2xl bg-indigo-950/40 border border-indigo-900/40 text-center">
-          <p className="text-xs font-semibold italic text-purple-200 leading-relaxed mb-3">
+        {/* Streamlined Footer Box */}
+        <div className="p-4 m-3 rounded-xl bg-indigo-950/30 border border-indigo-900/30 text-center">
+          <p className="text-[11px] font-semibold italic text-purple-200 mb-2">
             "Engineering Intelligence for a Better Tomorrow."
           </p>
 
-          <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2">
-            Stay connected with us
-          </p>
-
-          {/* Social Icons */}
-          <div className="flex items-center justify-center gap-3 mb-4">
+          <div className="flex items-center justify-center gap-2 mb-3">
             <a
               href="https://instagram.com/ieeesmckare"
               target="_blank"
               rel="noreferrer"
-              className="w-8 h-8 rounded-lg bg-white/5 hover:bg-pink-600/30 text-pink-400 flex items-center justify-center transition-all border border-white/10"
+              className="w-7 h-7 rounded-lg bg-white/5 hover:bg-pink-600/30 text-pink-400 flex items-center justify-center transition-all border border-white/10"
               title="Instagram"
             >
-              <InstagramIcon className="w-4 h-4" />
+              <InstagramIcon className="w-3.5 h-3.5" />
             </a>
             <a
               href="https://linkedin.com/company/ieee-smc-kare"
               target="_blank"
               rel="noreferrer"
-              className="w-8 h-8 rounded-lg bg-white/5 hover:bg-blue-600/30 text-blue-400 flex items-center justify-center transition-all border border-white/10"
+              className="w-7 h-7 rounded-lg bg-white/5 hover:bg-blue-600/30 text-blue-400 flex items-center justify-center transition-all border border-white/10"
               title="LinkedIn"
             >
-              <LinkedinIcon className="w-4 h-4" />
+              <LinkedinIcon className="w-3.5 h-3.5" />
             </a>
             <a
               href="https://ieeesmckare.in"
               target="_blank"
               rel="noreferrer"
-              className="w-8 h-8 rounded-lg bg-white/5 hover:bg-purple-600/30 text-purple-400 flex items-center justify-center transition-all border border-white/10"
+              className="w-7 h-7 rounded-lg bg-white/5 hover:bg-purple-600/30 text-purple-400 flex items-center justify-center transition-all border border-white/10"
               title="Website"
             >
-              <GlobeIcon className="w-4 h-4" />
+              <GlobeIcon className="w-3.5 h-3.5" />
             </a>
           </div>
 
           <div className="text-[10px] font-medium text-slate-500">
-            © 2026 IEEE SMC KARE SB<br />All rights reserved.
+            © 2026 IEEE SMC KARE SB
           </div>
         </div>
       </aside>
