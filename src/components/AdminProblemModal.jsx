@@ -47,7 +47,7 @@ export default function AdminProblemModal({ problem, isOpen, onClose, onSave }) 
         </button>
 
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-10 h-10 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 border border-purple-200">
+          <div className="w-10 h-10 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center shrink-0 border border-orange-200">
             <Edit3 className="w-5 h-5" />
           </div>
           <div>
@@ -73,7 +73,7 @@ export default function AdminProblemModal({ problem, isOpen, onClose, onSave }) 
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-slate-800 text-xs focus:ring-2 focus:ring-purple-500 focus:border-purple-500 font-medium"
+              className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-slate-800 text-xs focus:ring-2 focus:ring-orange-500 focus:border-orange-500 font-medium"
               placeholder="Enter title..."
               required
             />
@@ -87,7 +87,7 @@ export default function AdminProblemModal({ problem, isOpen, onClose, onSave }) 
               rows={4}
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-slate-800 text-xs focus:ring-2 focus:ring-purple-500 focus:border-purple-500 font-medium"
+              className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-slate-800 text-xs focus:ring-2 focus:ring-orange-500 focus:border-orange-500 font-medium"
               placeholder="Enter problem description..."
               required
             />
@@ -105,7 +105,7 @@ export default function AdminProblemModal({ problem, isOpen, onClose, onSave }) 
             <button
               type="submit"
               disabled={isSaving}
-              className="px-5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-700 text-white text-xs font-semibold shadow-md shadow-purple-200 transition-all cursor-pointer flex items-center gap-2 active:scale-95 disabled:opacity-50"
+              className="px-5 py-2.5 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-semibold shadow-md shadow-orange-200 transition-all cursor-pointer flex items-center gap-2 active:scale-95 disabled:opacity-50"
             >
               {isSaving ? (
                 <>

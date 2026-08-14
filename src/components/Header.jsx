@@ -19,10 +19,10 @@ export default function Header({ user, isAdmin, onToggleSidebar }) {
         </button>
 
         <div>
-          <h1 className="text-base font-bold text-slate-900 leading-tight">
+          <h1 className="text-base font-extrabold text-slate-900 leading-tight">
             Problem Statement Selection Portal
           </h1>
-          <p className="text-xs font-bold text-purple-700">
+          <p className="text-xs font-black text-orange-600">
             IEEE SMC KARE
           </p>
         </div>
@@ -55,7 +55,7 @@ export default function Header({ user, isAdmin, onToggleSidebar }) {
 
         {/* User Profile */}
         <div className="flex items-center gap-2.5 pl-2 border-l border-slate-200">
-          <div className="w-9 h-9 rounded-full bg-purple-600 text-white font-extrabold text-xs flex items-center justify-center shadow-xs shrink-0">
+          <div className="w-9 h-9 rounded-full bg-orange-600 text-white font-extrabold text-xs flex items-center justify-center shadow-xs shrink-0">
             {initials}
           </div>
           <div className="hidden sm:block text-left">

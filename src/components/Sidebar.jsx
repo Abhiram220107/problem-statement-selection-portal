@@ -5,12 +5,10 @@ import {
   LayoutDashboard,
   Users,
   FileText,
-  LogOut,
-  CheckCircle2
+  LogOut
 } from 'lucide-react';
 
 export default function Sidebar({ activeTab, setActiveTab, user, isAdmin = false, onLogout, isOpen, setIsOpen }) {
-  // Admin Navigation vs Team/Student Portal Navigation
   const navItems = isAdmin
     ? [
         { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
@@ -33,13 +31,13 @@ export default function Sidebar({ activeTab, setActiveTab, user, isAdmin = false
 
       {/* Sidebar Container */}
       <aside
-        className={`fixed top-0 left-0 bottom-0 z-50 w-60 bg-[#0f0d23] text-slate-200 flex flex-col justify-between transition-transform duration-300 ease-in-out border-r border-indigo-950/50 shadow-2xl ${
+        className={`fixed top-0 left-0 bottom-0 z-50 w-60 bg-[#120d08] text-slate-200 flex flex-col justify-between transition-transform duration-300 ease-in-out border-r border-orange-950/40 shadow-2xl ${
           isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
         }`}
       >
         {/* Top Logo Section */}
         <div>
-          <div className="p-5 border-b border-indigo-950/60 flex items-center justify-between">
+          <div className="p-5 border-b border-orange-950/50 flex items-center justify-between">
             <Logo className="h-10" />
           </div>
 
@@ -55,9 +53,9 @@ export default function Sidebar({ activeTab, setActiveTab, user, isAdmin = false
                     setActiveTab(item.id);
                     if (window.innerWidth < 1024) setIsOpen(false);
                   }}
-                  className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-semibold text-xs transition-all cursor-pointer ${
+                  className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-xs transition-all cursor-pointer ${
                     isActive
-                      ? 'bg-purple-600 text-white shadow-md shadow-purple-900/40 border border-purple-400/30'
+                      ? 'bg-orange-600 text-white shadow-md shadow-orange-950/50 border border-orange-400/30'
                       : 'text-slate-400 hover:text-white hover:bg-white/5'
                   }`}
                 >
@@ -70,7 +68,7 @@ export default function Sidebar({ activeTab, setActiveTab, user, isAdmin = false
             {/* Logout Button */}
             <button
               onClick={onLogout}
-              className="w-full flex items-center gap-3 px-4 py-3 rounded-xl font-semibold text-xs text-slate-400 hover:text-rose-400 hover:bg-rose-950/30 transition-all cursor-pointer mt-4"
+              className="w-full flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-xs text-slate-400 hover:text-rose-400 hover:bg-rose-950/30 transition-all cursor-pointer mt-4"
             >
               <LogOut className="w-4 h-4" />
               <span>Logout</span>
@@ -78,9 +76,9 @@ export default function Sidebar({ activeTab, setActiveTab, user, isAdmin = false
           </nav>
         </div>
 
-        {/* Streamlined Footer Box */}
-        <div className="p-4 m-3 rounded-xl bg-indigo-950/30 border border-indigo-900/30 text-center">
-          <p className="text-[11px] font-semibold italic text-purple-200 mb-2">
+        {/* Footer Box */}
+        <div className="p-4 m-3 rounded-xl bg-orange-950/20 border border-orange-900/30 text-center">
+          <p className="text-[11px] font-semibold italic text-orange-200 mb-2">
             "Engineering Intelligence for a Better Tomorrow."
           </p>
 
@@ -107,7 +105,7 @@ export default function Sidebar({ activeTab, setActiveTab, user, isAdmin = false
               href="https://ieeesmckare.in"
               target="_blank"
               rel="noreferrer"
-              className="w-7 h-7 rounded-lg bg-white/5 hover:bg-purple-600/30 text-purple-400 flex items-center justify-center transition-all border border-white/10"
+              className="w-7 h-7 rounded-lg bg-white/5 hover:bg-orange-600/30 text-orange-400 flex items-center justify-center transition-all border border-white/10"
               title="Website"
             >
               <GlobeIcon className="w-3.5 h-3.5" />

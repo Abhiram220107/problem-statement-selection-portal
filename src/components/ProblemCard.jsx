@@ -1,6 +1,6 @@
 import React from 'react';
 import StatusBadge from './StatusBadge';
-import { ArrowRight, Lock, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Lock } from 'lucide-react';
 
 export default function ProblemCard({ problem, teamHasSelection, onSelect, isSubmitting }) {
   const isAvailable = problem.status === 'AVAILABLE' || problem.status === 'Available';
@@ -9,14 +9,14 @@ export default function ProblemCard({ problem, teamHasSelection, onSelect, isSub
     <div
       className={`relative bg-white rounded-2xl p-6 border transition-all duration-200 flex flex-col justify-between ${
         isAvailable
-          ? 'border-slate-200 shadow-card shadow-card-hover hover:border-indigo-300'
+          ? 'border-slate-200 shadow-card shadow-card-hover hover:border-orange-300'
           : 'border-slate-200 bg-slate-50/70 opacity-90'
       }`}
     >
       <div>
         {/* Header: ID + Badge */}
         <div className="flex items-center justify-between gap-2 mb-3">
-          <span className="inline-block px-3 py-1 text-xs font-extrabold tracking-wider text-indigo-700 bg-indigo-50 border border-indigo-200 rounded-lg">
+          <span className="inline-block px-3 py-1 text-xs font-extrabold tracking-wider text-orange-700 bg-orange-50 border border-orange-200 rounded-lg">
             {problem.id}
           </span>
           <StatusBadge status={problem.status} />
@@ -55,7 +55,7 @@ export default function ProblemCard({ problem, teamHasSelection, onSelect, isSub
             <button
               onClick={() => onSelect(problem)}
               disabled={isSubmitting}
-              className="w-full py-2.5 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-xs shadow-md shadow-indigo-200 transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-[0.98]"
+              className="w-full py-2.5 px-4 rounded-xl bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs shadow-md shadow-orange-200 transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-[0.98]"
             >
               <span>Select Problem</span>
               <ArrowRight className="w-4 h-4" />

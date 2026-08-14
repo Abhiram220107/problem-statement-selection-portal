@@ -18,7 +18,7 @@ export default function ConfirmationModal({ problem, isOpen, onClose, onConfirm,
 
         {/* Warning Icon & Title */}
         <div className="flex items-center gap-3 mb-4">
-          <div className="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center shrink-0 border border-amber-200">
+          <div className="w-12 h-12 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center shrink-0 border border-orange-200">
             <AlertTriangle className="w-6 h-6" />
           </div>
           <div>
@@ -29,7 +29,7 @@ export default function ConfirmationModal({ problem, isOpen, onClose, onConfirm,
 
         {/* Selected Problem Highlight Box */}
         <div className="my-4 p-4 rounded-xl bg-slate-50 border border-slate-200">
-          <div className="text-[11px] font-extrabold text-indigo-600 tracking-wider mb-1">
+          <div className="text-[11px] font-extrabold text-orange-600 tracking-wider mb-1">
             PROBLEM ID: {problem.id}
           </div>
           <h4 className="text-base font-bold text-slate-900 leading-snug">
@@ -62,7 +62,7 @@ export default function ConfirmationModal({ problem, isOpen, onClose, onConfirm,
             type="button"
             onClick={onConfirm}
             disabled={isSubmitting}
-            className="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold shadow-md shadow-indigo-200 transition-all cursor-pointer flex items-center gap-2 active:scale-95 disabled:opacity-50"
+            className="px-5 py-2.5 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold shadow-md shadow-orange-200 transition-all cursor-pointer flex items-center gap-2 active:scale-95 disabled:opacity-50"
           >
             {isSubmitting ? (
               <>

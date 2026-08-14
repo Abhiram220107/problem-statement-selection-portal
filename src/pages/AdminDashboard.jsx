@@ -90,7 +90,7 @@ export default function AdminDashboard({ admin, onLogout }) {
 
   return (
     <div className="min-h-screen bg-slate-50 flex">
-      {/* Dark Sidebar */}
+      {/* Sidebar */}
       <Sidebar
         activeTab={activeTab}
         setActiveTab={setActiveTab}
@@ -137,7 +137,7 @@ export default function AdminDashboard({ admin, onLogout }) {
           {/* 4 STATS CARDS */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
             <div className="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shrink-0 border border-purple-100">
+              <div className="w-12 h-12 rounded-xl bg-orange-50 text-orange-600 flex items-center justify-center shrink-0 border border-orange-100">
                 <Users className="w-6 h-6" />
               </div>
               <div>
@@ -185,12 +185,12 @@ export default function AdminDashboard({ admin, onLogout }) {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* LEFT COLUMN: Teams Overview Table */}
             <div className="lg:col-span-2 space-y-8">
-              {(activeTab === 'dashboard' || activeTab === 'teams' || activeTab === 'selections') && (
+              {(activeTab === 'dashboard' || activeTab === 'teams') && (
                 <div className="bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden">
                   <div className="p-5 border-b border-slate-100 flex flex-wrap items-center justify-between gap-3">
                     <div>
                       <h3 className="text-base font-extrabold text-slate-900 flex items-center gap-2">
-                        <Users className="w-4 h-4 text-purple-600" />
+                        <Users className="w-4 h-4 text-orange-600" />
                         <span>Teams Overview</span>
                       </h3>
                       <p className="text-xs text-slate-500 font-medium">
@@ -211,7 +211,7 @@ export default function AdminDashboard({ admin, onLogout }) {
 
                       <button
                         onClick={handleExportCSV}
-                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-purple-50 hover:bg-purple-100 text-purple-700 font-semibold text-xs border border-purple-200 transition-all cursor-pointer"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-700 font-semibold text-xs border border-orange-200 transition-all cursor-pointer"
                       >
                         <Download className="w-3.5 h-3.5" />
                         <span>Export</span>
@@ -234,10 +234,10 @@ export default function AdminDashboard({ admin, onLogout }) {
                         {teams.map((t) => (
                           <tr key={t.id} className="hover:bg-slate-50/60 transition-colors">
                             <td className="py-3.5 px-4 font-extrabold text-slate-900">{t.id}</td>
-                            <td className="py-3.5 px-4 font-bold text-indigo-700">{t.name}</td>
+                            <td className="py-3.5 px-4 font-bold text-orange-700">{t.name}</td>
                             <td className="py-3.5 px-4">
                               {t.selectedProblemId !== '—' ? (
-                                <span className="font-extrabold px-2.5 py-1 rounded-md bg-indigo-50 text-indigo-700 border border-indigo-200">
+                                <span className="font-extrabold px-2.5 py-1 rounded-md bg-orange-50 text-orange-700 border border-orange-200">
                                   {t.selectedProblemId}
                                 </span>
                               ) : (
@@ -262,7 +262,7 @@ export default function AdminDashboard({ admin, onLogout }) {
                   <div className="p-5 border-b border-slate-100 flex items-center justify-between">
                     <div>
                       <h3 className="text-base font-extrabold text-slate-900 flex items-center gap-2">
-                        <FileText className="w-4 h-4 text-purple-600" />
+                        <FileText className="w-4 h-4 text-orange-600" />
                         <span>Problem Statements Management</span>
                       </h3>
                       <p className="text-xs text-slate-500 font-medium">Edit title/description and monitor allocation</p>
@@ -283,7 +283,7 @@ export default function AdminDashboard({ admin, onLogout }) {
                       <tbody className="divide-y divide-slate-100 font-medium text-slate-700">
                         {problems.map((p) => (
                           <tr key={p.id} className="hover:bg-slate-50/60 transition-colors">
-                            <td className="py-4 px-4 font-black text-indigo-700 align-top">{p.id}</td>
+                            <td className="py-4 px-4 font-black text-orange-600 align-top">{p.id}</td>
                             <td className="py-4 px-4 max-w-xs align-top">
                               <div className="font-bold text-slate-900 text-sm mb-1">{p.title}</div>
                               <p className="text-slate-600 text-xs leading-relaxed">{p.description}</p>
@@ -297,7 +297,7 @@ export default function AdminDashboard({ admin, onLogout }) {
                             <td className="py-4 px-4 text-right align-top">
                               <button
                                 onClick={() => setEditingProblem(p)}
-                                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-purple-50 hover:bg-purple-100 text-purple-700 border border-purple-200 font-semibold text-xs transition-all cursor-pointer"
+                                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-700 border border-orange-200 font-semibold text-xs transition-all cursor-pointer"
                               >
                                 <Edit3 className="w-3.5 h-3.5" />
                                 <span>Edit</span>
@@ -317,14 +317,14 @@ export default function AdminDashboard({ admin, onLogout }) {
               {/* Announcements Card */}
               <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs">
                 <div className="flex items-center gap-2 mb-4">
-                  <Megaphone className="w-5 h-5 text-purple-600" />
+                  <Megaphone className="w-5 h-5 text-orange-600" />
                   <h4 className="text-sm font-extrabold text-slate-900">Announcements</h4>
                 </div>
 
-                <div className="p-4 rounded-xl bg-purple-50/80 border border-purple-100 text-purple-900 text-xs leading-relaxed mb-4">
+                <div className="p-4 rounded-xl bg-orange-50/80 border border-orange-100 text-orange-950 text-xs leading-relaxed mb-4">
                   <div className="font-bold mb-1 flex items-center justify-between">
                     <span>Welcome Admin!</span>
-                    <Megaphone className="w-4 h-4 text-purple-500" />
+                    <Megaphone className="w-4 h-4 text-orange-600" />
                   </div>
                   Use the side menu to manage teams, problems, and view live selections.
                 </div>
@@ -337,7 +337,7 @@ export default function AdminDashboard({ admin, onLogout }) {
               {/* Quick Links Card */}
               <div className="bg-white rounded-2xl p-6 border border-slate-200 shadow-xs">
                 <h4 className="text-sm font-extrabold text-slate-900 mb-4 flex items-center gap-2">
-                  <GlobeIcon className="w-4 h-4 text-purple-600" />
+                  <GlobeIcon className="w-4 h-4 text-orange-600" />
                   <span>Quick Links</span>
                 </h4>
 
@@ -378,13 +378,13 @@ export default function AdminDashboard({ admin, onLogout }) {
                     href="https://ieeesmckare.in"
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-purple-50 text-slate-700 hover:text-purple-700 border border-slate-200/80 transition-all group"
+                    className="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-orange-50 text-slate-700 hover:text-orange-700 border border-slate-200/80 transition-all group"
                   >
                     <div className="flex items-center gap-2.5">
-                      <GlobeIcon className="w-4 h-4 text-purple-600" />
+                      <GlobeIcon className="w-4 h-4 text-orange-600" />
                       <span>Website</span>
                     </div>
-                    <span className="text-slate-400 group-hover:text-purple-600 flex items-center gap-1 font-bold text-[11px]">
+                    <span className="text-slate-400 group-hover:text-orange-600 flex items-center gap-1 font-bold text-[11px]">
                       ieeesmckare.in
                       <ArrowUpRight className="w-3.5 h-3.5" />
                     </span>
