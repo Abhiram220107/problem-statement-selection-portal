@@ -97,6 +97,7 @@ export default function TeamDashboard({ team, onLogout }) {
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         user={teamState}
+        isAdmin={false}
         onLogout={onLogout}
         isOpen={isSidebarOpen}
         setIsOpen={setIsSidebarOpen}

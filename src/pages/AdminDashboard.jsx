@@ -95,6 +95,7 @@ export default function AdminDashboard({ admin, onLogout }) {
         activeTab={activeTab}
         setActiveTab={setActiveTab}
         user={admin}
+        isAdmin={true}
         onLogout={onLogout}
         isOpen={isSidebarOpen}
         setIsOpen={setIsSidebarOpen}

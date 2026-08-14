@@ -5,15 +5,21 @@ import {
   LayoutDashboard,
   Users,
   FileText,
-  LogOut
+  LogOut,
+  CheckCircle2
 } from 'lucide-react';
 
-export default function Sidebar({ activeTab, setActiveTab, user, onLogout, isOpen, setIsOpen }) {
-  const navItems = [
-    { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { id: 'teams', label: 'Teams', icon: Users },
-    { id: 'problems', label: 'Problems', icon: FileText },
-  ];
+export default function Sidebar({ activeTab, setActiveTab, user, isAdmin = false, onLogout, isOpen, setIsOpen }) {
+  // Admin Navigation vs Team/Student Portal Navigation
+  const navItems = isAdmin
+    ? [
+        { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
+        { id: 'teams', label: 'Teams Overview', icon: Users },
+        { id: 'problems', label: 'Manage Problems', icon: FileText },
+      ]
+    : [
+        { id: 'problems', label: 'Problem Statements', icon: FileText },
+      ];
 
   return (
     <>
@@ -41,7 +47,7 @@ export default function Sidebar({ activeTab, setActiveTab, user, onLogout, isOpe
           <nav className="p-4 space-y-1.5">
             {navItems.map((item) => {
               const Icon = item.icon;
-              const isActive = activeTab === item.id;
+              const isActive = activeTab === item.id || (!isAdmin && item.id === 'problems');
               return (
                 <button
                   key={item.id}
